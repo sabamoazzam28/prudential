@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: java-spring-boot-deploy
+  labels: 
+    app: java-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-app
+  template:
+    metadata:
+      labels:
+        app: java-app 
+    spec:
+      containers:
+      - name: java-pod
+        image: myapp/javaimg
+        ports:
+        - name: nodejs-port
+          containerPort: 8080

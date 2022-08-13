@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: captain-service
+  name: java-spring-boot-srv
+  labels: 
+    app: java-app
 spec:
   ports:
   - port: 80
-    targetPort: nodejs-port
-    protocol: TCP
+    targetPort: 8080
+  type: NodePort
   selector:
-    app: captain-clap
-  type: LoadBalancer
+    app: java-app
