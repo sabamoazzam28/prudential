@@ -6,10 +6,9 @@ RUN mvn install
 
 #Use generated jar file and run java application
 FROM openjdk:8-jdk-alpine
-COPY --from=MAVEN_TOOL /tmp/target/*.jar /target/*.jar
+COPY --from=MAVEN_TOOL /home/java/target/*.jar /target/*.jar
 ARG JAR_FILE=/home/java/target/*.jar
 WORKDIR /home/java
 COPY ${JAR_FILE} app.jar
 EXPOSE 8080-8080
 ENTRYPOINT ["java","-jar","/app.jar"]
-
