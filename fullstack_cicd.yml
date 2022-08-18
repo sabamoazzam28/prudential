@@ -4,25 +4,18 @@
   vars:
      namespace: prudential
   tasks:
-    - name: Git checkout
+    - name: Git checkout application code
       ansible.builtin.git:
         repo: 'https://github.com/sabamoazzam28/prudential.git'
         dest: /app
-    - name: Check if kubectl is installed
-      command: kubectl version --short
-      become_user: ubuntu
-      register: kube_version
     - name: Install kubectl
       shell: curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
-      when: kube_version.rc==1
     - name: Granting exec permission 
       file:
         path: ./kubectl
-        mode: '775'
-      when: kube_version.rc==1
+        mode: '775
     - name: Moving executable to bin folder
       command: mv kubectl /usr/local/bin/
-      when: kube_version.rc==1
     - name: Build Dockerfile
       shell: docker build -t myapp/javaimg
     - name: Create namespace

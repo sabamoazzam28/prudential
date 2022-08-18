@@ -18,5 +18,5 @@ spec:
       - name: java-pod
         image: myapp/javaimg
         ports:
-        - name: nodejs-port
+        - name: java-app-port
           containerPort: 8080
