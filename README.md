@@ -9,6 +9,6 @@ The entire stack as been designed in ubuntu OS. Below are the steps which explai
 
 The entire task has been automated through **Ansible** playbook.
 
-## Command to run playbook : **ansible-playbook fullstack_cicd.yml**
+### Command to run playbook : ***ansible-playbook fullstack_cicd.yml***
 
 
