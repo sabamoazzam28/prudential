@@ -1,6 +1,6 @@
 # Assignment Overview
 
-The entire stack as been designed in ubuntu OS.The entire task has been automated through **Ansible** playbook. Below are the steps which explains the CICD:
+The entire stack as been designed in ubuntu OS and automated through **Ansible** playbook. Below are the steps which explains the CICD:
 
 * ***Step 1*** : Git clone the repo where app resides
 * ***Step 2*** : Use the application source to build jar file using maven and make image from that generated jar file through **Dockerfile**
